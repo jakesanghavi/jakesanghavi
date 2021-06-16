@@ -1,0 +1,4 @@
+- 👋 Hi, I’m @jakesanghavi
+- 👀 I’m interested in mainly astronomy and sports analytics, but I am willing to work on almost anything.
+- 🌱 I’m currently studying at CWRU (class of 2024) with an intended major of data science and intended minors in astronomy and economics.
+- 📫 If you need to reach me, contact me @jake.sanghavi@gmail.com
