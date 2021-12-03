@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @jakesanghavi
 - 👀 My primary interests are in astronomy and sports analytics, but I am willing to work on almost anything.
-- 💻 I work mostly in Python, but I have some knowledge in Java, HTML/CSS, and Javascript, and I have also done work with R.
-- 🏫 I’m currently studying at CWRU (class of 2024) with an intended major of data science and intended minors in astronomy and economics.
+- 💻 I work mostly in Python, but I have knowledge in Java, HTML/CSS, and Javascript. I have also done work with R.
+- 🏫 I’m currently a college sophomore at CWRU (class of 2024) with an intended major of data science and intended minors in astronomy and economics.
 - 📫 If you need to reach me, contact me @jms625@case.edu
