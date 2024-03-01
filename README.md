@@ -1,5 +1,5 @@
 # 💫 About Me:
-I'm a fourth-year data science student at Case Western Reserve University graduating this spring.<br><br>I'm currently working on sports statistics in Python and building a full-stack musical game app, [Musicle](https://musicle-official.netlify.app/)!
+Hi, my name is Jake Sanghavi! I am a fourth-year data science student at Case Western Reserve University graduating this spring. I am interested in machine learning, software engineering, astrophysics, and business.<br><br>I'm currently working on sports statistics in Python and building a full-stack musical game app, [Musicle](https://musicle-official.netlify.app/)!
 
 
 ## 🌐 Socials:
