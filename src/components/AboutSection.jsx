@@ -27,10 +27,10 @@ export default function AboutSection() {
       description: 'Predicted event attendance using PyTorch to structure staffing and inventory.'
     },
     {
-      title: 'Junior Developer',
-      company: 'DevStudio',
-      period: '2019 - 2020',
-      description: 'Developed mobile-first websites and learned modern development practices'
+      title: 'Data Science Intern',
+      company: 'Thermo Fisher Scientific',
+      period: '2022',
+      description: 'Developed sales algorithms using combinatorics and anomaly detection for competitor analysis.'
     }
   ];
 
@@ -104,7 +104,7 @@ export default function AboutSection() {
             <div className="relative flex justify-center w-full max-w-sm mx-auto p-1 bg-slate-800 rounded-full border border-slate-700/50">
               {/* The Animated Gradient Background */}
               <div
-                className={`absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transition-transform duration-300 ease-in-out w-1/2 
+                className={`absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transition-transform duration-360 ease-in-out w-1/2 
       ${activeTab === 'experience' ? 'translate-x-0' : 'translate-x-full'}
     `}
               ></div>

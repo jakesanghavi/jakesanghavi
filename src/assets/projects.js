@@ -32,9 +32,9 @@ export const projectsExport = [
   {
     id: 4,
     title: 'NBA Stats',
-    description: 'A simple blog built with a static site generator.',
-    technologies: ['Next.js', 'React', 'Markdown'],
-    github_url: '#',
+    description: 'Repository for involved NBA data scraping and analysis.',
+    technologies: ['Python', 'sklearn', 'Selenium'],
+    github_url: 'https://github.com/jakesanghavi/NBA_Stats',
     live_url: '#',
     image_url: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=250&fit=crop&crop=entropy',
     featured: false,
