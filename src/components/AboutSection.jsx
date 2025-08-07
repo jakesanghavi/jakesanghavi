@@ -52,8 +52,6 @@ export default function AboutSection() {
   const [activeTab, setActiveTab] = useState('experience');
 
   const activeData = activeTab === 'experience' ? workExperience : education;
-  const headingText = activeTab === 'experience' ? 'Work Experience' : 'Education';
-  const headingIcon = activeTab === 'experience' ? <Rocket className="text-blue-400" /> : <GraduationCap className="text-blue-400" />;
 
   return (
     <section id="about" className="py-20 bg-slate-900 relative overflow-hidden">
@@ -103,37 +101,52 @@ export default function AboutSection() {
           >
 
             {/* Toggle Buttons (Tabs) */}
-            <div className="flex justify-center mb-8">
+            <div className="relative flex justify-center w-full max-w-sm mx-auto p-1 bg-slate-800 rounded-full border border-slate-700/50">
+              {/* The Animated Gradient Background */}
+              <div
+                className={`absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transition-transform duration-300 ease-in-out w-1/2 
+      ${activeTab === 'experience' ? 'translate-x-0' : 'translate-x-full'}
+    `}
+              ></div>
+
               <button
                 onClick={() => setActiveTab('experience')}
-                className={`flex items-center gap-2 px-6 py-2 rounded-l-full font-medium transition-all duration-200 ${activeTab === 'experience'
-                  ? 'transform scale-105 shadow-lg z-10 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white'
-                  : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
+                className={`relative flex-1 flex items-center justify-center gap-2 px-6 py-2 rounded-full font-medium transition-colors duration-300 ease-in-out z-10
+      ${activeTab === 'experience'
+                    ? 'text-white'
+                    : 'text-slate-400 hover:text-white'
                   }`}
               >
                 <Rocket />
                 Experience
               </button>
+
               <button
                 onClick={() => setActiveTab('education')}
-                className={`flex items-center gap-2 px-6 py-2 rounded-r-full font-medium transition-all duration-200 ${activeTab === 'education'
-                  ? 'transform scale-105 shadow-lg z-10 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white'
-                  : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
+                className={`relative flex-1 flex items-center justify-center gap-2 px-6 py-2 rounded-full font-medium transition-colors duration-300 ease-in-out z-10
+      ${activeTab === 'education'
+                    ? 'text-white'
+                    : 'text-slate-400 hover:text-white'
                   }`}
               >
                 <GraduationCap />
                 Education
               </button>
             </div>
-            <div className="space-y-8">
+            <div className="mt-8 flex flex-col gap-y-8">
+              {/* To fix later: making delay 0 and layout prop make no animation problems
+              Probably a good move is keep them as they were (no layout, index*0.1 delay) 
+              when loading experience for the first time, but then using this verson if 
+              toggling over from eduation */}
               {activeData.map((item, index) => (
                 <motion.div
                   key={index}
+                  layout
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300"
+                  transition={{ duration: 0.6, delay: Math.min(index * 0.0, 0) }}
+                  className="relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300"
                 >
                   <div className="flex items-start gap-4">
                     <div className="w-2 h-2 rounded-full bg-blue-400 mt-3 flex-shrink-0"></div>
@@ -172,7 +185,7 @@ export default function AboutSection() {
             </div>
           ))}
         </motion.div>
-      </div>
-    </section>
+      </div >
+    </section >
   );
 }
