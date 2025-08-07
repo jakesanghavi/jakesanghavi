@@ -83,7 +83,7 @@ export default function ProjectCard({ project, index }) {
             </Button>
           )}
           
-          {project.live_url && (
+          {project.live_url && project.live_url.length > 1 && (
             <Button
               asChild
               size="sm"

@@ -184,7 +184,7 @@ export default function ContactSection() {
             <div>
               <h3 className="text-2xl font-bold text-white mb-6">Get in Touch</h3>
               <p className="text-slate-300 text-lg leading-relaxed mb-8">
-                I'm always excited to discuss new opportunities, collaborate on interesting projects, or just chat about technology and development.
+                I'm always excited to discuss opportunities, collaborate on interesting projects, and meet new people.
               </p>
             </div>
 

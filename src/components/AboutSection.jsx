@@ -2,16 +2,10 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Code, Rocket, Zap, Star, GraduationCap } from 'lucide-react';
 import SkillCard from './SkillCard';
+import { skillsExport } from '../assets/imports';
 
 export default function AboutSection() {
-  const skills = [
-    { name: 'Python', level: 95, color: 'from-green-400 to-emerald-400' },
-    { name: 'Javascript', level: 90, color: 'from-yellow-400 to-orange-400' },
-    { name: 'SQL', level: 85, color: 'from-blue-500 to-indigo-500' },
-    { name: 'R', level: 88, color: 'from-orange-400 to-red-400' },
-    { name: 'React.js', level: 80, color: 'from-blue-400 to-cyan-400' },
-    { name: 'Azure Suite', level: 75, color: 'from-pink-400 to-purple-400' }
-  ];
+  const [skills] = useState(skillsExport);
 
   const workExperience = [
     {
@@ -80,12 +74,13 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            className="bg-gradient-to-br from-slate-800 to-indigo-900 rounded-2xl p-8"
           >
             <h3 className="text-3xl font-bold text-white mb-8 flex items-center gap-3">
               <Zap className="text-yellow-400" />
               Technical Skills
             </h3>
-            <div className="space-y-6">
+            <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
               {skills.map((skill, index) => (
                 <SkillCard key={skill.name} skill={skill} index={index} />
               ))}

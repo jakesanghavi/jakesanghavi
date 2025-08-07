@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { projectsExport } from '../assets/projects'
+import { projectsExport } from '../assets/imports'
 import ProjectCard from './ProjectCard';
 import Button from './Button'
 
