@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Code, Rocket, Zap, Star } from 'lucide-react';
+import { Code, Rocket, Zap, Star, GraduationCap } from 'lucide-react';
 import SkillCard from './SkillCard';
 
 export default function AboutSection() {
@@ -13,7 +13,7 @@ export default function AboutSection() {
     { name: 'Azure Suite', level: 75, color: 'from-pink-400 to-purple-400' }
   ];
 
-  const experiences = [
+  const workExperience = [
     {
       title: 'Data Analyst II',
       company: 'AT&T',
@@ -34,10 +34,31 @@ export default function AboutSection() {
     }
   ];
 
+  const education = [
+    {
+      title: 'M.S. in Data Science',
+      company: 'Georgia Tech',
+      period: '2025-2026',
+      description: 'Furthering my understanding in advanced AI/ML fields.',
+    },
+    {
+      title: 'B.S. in Data Science',
+      company: 'Case Western Reserve University',
+      period: '2020 - 2024',
+      description: 'Graduated Summa Cum Laude with a 4.0 GPA and numerous awards.',
+    },
+  ];
+
+  const [activeTab, setActiveTab] = useState('experience');
+
+  const activeData = activeTab === 'experience' ? workExperience : education;
+  const headingText = activeTab === 'experience' ? 'Work Experience' : 'Education';
+  const headingIcon = activeTab === 'experience' ? <Rocket className="text-blue-400" /> : <GraduationCap className="text-blue-400" />;
+
   return (
     <section id="about" className="py-20 bg-slate-900 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-purple-900/20 to-slate-900/20"></div>
-      
+
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -80,12 +101,32 @@ export default function AboutSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <h3 className="text-3xl font-bold text-white mb-8 flex items-center gap-3">
-              <Rocket className="text-blue-400" />
-              Experience
-            </h3>
+
+            {/* Toggle Buttons (Tabs) */}
+            <div className="flex justify-center mb-8">
+              <button
+                onClick={() => setActiveTab('experience')}
+                className={`flex items-center gap-2 px-6 py-2 rounded-l-full font-medium transition-all duration-200 ${activeTab === 'experience'
+                  ? 'transform scale-105 shadow-lg z-10 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white'
+                  : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
+                  }`}
+              >
+                <Rocket />
+                Experience
+              </button>
+              <button
+                onClick={() => setActiveTab('education')}
+                className={`flex items-center gap-2 px-6 py-2 rounded-r-full font-medium transition-all duration-200 ${activeTab === 'education'
+                  ? 'transform scale-105 shadow-lg z-10 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white'
+                  : 'bg-slate-800 text-slate-400 hover:bg-slate-700'
+                  }`}
+              >
+                <GraduationCap />
+                Education
+              </button>
+            </div>
             <div className="space-y-8">
-              {experiences.map((exp, index) => (
+              {activeData.map((item, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
@@ -97,9 +138,9 @@ export default function AboutSection() {
                   <div className="flex items-start gap-4">
                     <div className="w-2 h-2 rounded-full bg-blue-400 mt-3 flex-shrink-0"></div>
                     <div>
-                      <h4 className="text-xl font-semibold text-white mb-1">{exp.title}</h4>
-                      <p className="text-blue-400 font-medium mb-2">{exp.company} • {exp.period}</p>
-                      <p className="text-slate-300">{exp.description}</p>
+                      <h4 className="text-xl font-semibold text-white mb-1">{item.title}</h4>
+                      <p className="text-blue-400 font-medium mb-2">{item.company} • {item.period}</p>
+                      <p className="text-slate-300">{item.description}</p>
                     </div>
                   </div>
                 </motion.div>
