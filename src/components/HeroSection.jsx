@@ -18,11 +18,9 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="mb-8"
                 >
-                    <div className="w-48 h-48 mx-auto mb-8 rounded-full bg-gradient-to-r from-blue-400 to-purple-600 p-1">
+                    <div className="w-48 h-48 mx-auto rounded-full bg-gradient-to-r from-blue-400 to-purple-600 p-1">
                         <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center">
-                            {/* <span className="text-4xl font-bold text-white">JS</span> */}
                             <img className="w-full h-full rounded-full object-cover" src="https://raw.githubusercontent.com/jakesanghavi/jakesanghavi.github.io/main/images/me.JPG"></img>
                         </div>
                     </div>
@@ -32,8 +30,7 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
-                    style={{ opacity: 1, transform: 'none' }}
+                    className="text-6xl md:text-8xl font-bold mt-4 mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-relaxed"
                 >
                     Jake Sanghavi
                 </motion.h1>
@@ -42,7 +39,7 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
-                    className="text-xl md:text-2xl text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed"
+                    className="text-xl md:text-2xl text-slate-300 max-w-2xl mx-auto leading-relaxed"
                 >
                     Data Scientist and Full-Stack Developer creating innovative products
                 </motion.p>
@@ -51,7 +48,7 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.8 }}
-                    className="flex flex-wrap justify-center gap-4 mb-12"
+                    className="flex flex-wrap justify-center gap-4 mt-8 mb-8"
                 >
                     <Button
                         onClick={() => scrollToSection('portfolio')}
@@ -72,7 +69,7 @@ export default function HeroSection() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8, delay: 1.2 }}
-                    className="flex justify-center gap-6 mb-16"
+                    className="flex justify-center gap-6 mb-8"
                 >
                     <a
                         href="https://github.com/jakesanghavi"

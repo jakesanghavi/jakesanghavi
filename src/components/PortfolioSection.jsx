@@ -17,8 +17,8 @@ export default function PortfolioSection() {
     } else if (filter === 'featured') {
       setFilteredProjects(projects.filter(project => project.featured));
     } else {
-      setFilteredProjects(projects.filter(project => 
-        project.technologies.some(tech => 
+      setFilteredProjects(projects.filter(project =>
+        project.technologies.some(tech =>
           tech.toLowerCase().includes(filter.toLowerCase())
         )
       ));
@@ -42,7 +42,7 @@ export default function PortfolioSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-relaxed">
             Featured Projects
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
@@ -63,11 +63,10 @@ export default function PortfolioSection() {
               key={filter}
               onClick={() => filterProjects(filter)}
               variant={activeFilter === filter ? "default" : "outline"}
-              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
-                activeFilter === filter
+              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${activeFilter === filter
                   ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white'
                   : 'border-slate-600 text-slate-300 hover:border-blue-400 hover:text-blue-400'
-              }`}
+                }`}
             >
               {filter.charAt(0).toUpperCase() + filter.slice(1)}
             </Button>
@@ -86,7 +85,7 @@ export default function PortfolioSection() {
             ))}
           </div>
         ) : (
-          <motion.div 
+          <motion.div
             layout
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           >

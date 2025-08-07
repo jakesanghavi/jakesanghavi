@@ -1,10 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Github, ExternalLink, Star } from 'lucide-react';
-import Button from './Button'
+import Button from './Button';
+import { FastAverageColor } from 'fast-average-color';
 
 export default function ProjectCard({ project, index }) {
+  const [backgroundColor, setBackgroundColor] = useState('');
   const imageUrl = project.image_url || `https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=250&fit=crop&crop=entropy`;
+
+  useEffect(() => {
+    const fac = new FastAverageColor();
+    const image = new Image();
+    image.crossOrigin = 'Anonymous';
+    image.src = imageUrl;
+
+    image.onload = () => {
+      // Pick a small region in the top-left corner (e.g., 10x10 pixels)
+      fac.getColorAsync(image, {
+        region: {
+          left: 0,
+          top: 0,
+          width: 10,
+          height: 10,
+        }
+      })
+      .then(color => {
+        setBackgroundColor(color.hex);
+      })
+      .catch(e => {
+        console.error('Error getting average color:', e);
+        // Fallback to a default color if needed
+        setBackgroundColor('#434343'); 
+      });
+    };
+  }, [imageUrl]);
 
   return (
     <motion.div
@@ -16,22 +45,13 @@ export default function ProjectCard({ project, index }) {
       whileHover={{ y: -10 }}
       className="group relative bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300"
     >
-      <div className="relative overflow-hidden h-48">
-        {/* Blurred background image */}
-        <img
-          src={imageUrl}
-          alt={`Blurred background for ${project.title}`}
-          className="absolute inset-0 w-full h-full object-cover blur-lg scale-150"
-        />
-
-        {/* The main image, placed on top */}
+      <div className="relative overflow-hidden h-48" style={{ backgroundColor }}>
         <img
           src={imageUrl}
           alt={project.title}
-          className="relative z-10 w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
+          className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
         />
-
-        {/* Gradient overlay */}
+        {/* The overlay is still useful for text contrast */}
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"></div>
       </div>
 
