@@ -21,7 +21,7 @@ export default function HeroSection() {
                 >
                     <div className="w-48 h-48 mx-auto rounded-full bg-gradient-to-r from-blue-400 to-purple-600 p-1">
                         <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center">
-                            <img className="w-full h-full rounded-full object-cover" src="https://raw.githubusercontent.com/jakesanghavi/jakesanghavi.github.io/main/images/me.JPG"></img>
+                            <img className="w-full h-full rounded-full object-cover transform scale-150" src="https://raw.githubusercontent.com/jakesanghavi/jakesanghavi.github.io/main/images/denver_me_cropped.JPG"></img>
                         </div>
                     </div>
                 </motion.div>
