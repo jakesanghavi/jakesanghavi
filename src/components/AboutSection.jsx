@@ -5,26 +5,26 @@ import SkillCard from './SkillCard';
 
 export default function AboutSection() {
   const skills = [
-    { name: 'React', level: 95, color: 'from-blue-400 to-cyan-400' },
-    { name: 'Node.js', level: 90, color: 'from-green-400 to-emerald-400' },
-    { name: 'TypeScript', level: 85, color: 'from-blue-500 to-indigo-500' },
-    { name: 'Python', level: 88, color: 'from-yellow-400 to-orange-400' },
-    { name: 'AWS', level: 80, color: 'from-orange-400 to-red-400' },
-    { name: 'GraphQL', level: 75, color: 'from-pink-400 to-purple-400' }
+    { name: 'Python', level: 95, color: 'from-green-400 to-emerald-400' },
+    { name: 'Javascript', level: 90, color: 'from-yellow-400 to-orange-400' },
+    { name: 'SQL', level: 85, color: 'from-blue-500 to-indigo-500' },
+    { name: 'R', level: 88, color: 'from-orange-400 to-red-400' },
+    { name: 'React.js', level: 80, color: 'from-blue-400 to-cyan-400' },
+    { name: 'Azure Suite', level: 75, color: 'from-pink-400 to-purple-400' }
   ];
 
   const experiences = [
     {
-      title: 'Senior Full-Stack Developer',
-      company: 'TechCorp',
-      period: '2022 - Present',
-      description: 'Leading development of scalable web applications serving 100k+ users'
+      title: 'Data Analyst II',
+      company: 'AT&T',
+      period: '2024 - Present',
+      description: 'Primary developer of various ML and NLP models using Prophet and Transformer models. Informed company strategy around promotional programs and legal claim handling.'
     },
     {
-      title: 'Frontend Developer',
-      company: 'StartupXYZ',
-      period: '2020 - 2022',
-      description: 'Built responsive React applications and improved performance by 40%'
+      title: 'Data Analyst Intern',
+      company: 'The Kraft Group',
+      period: '2024',
+      description: 'Predicted event attendance using PyTorch to structure staffing and inventory.'
     },
     {
       title: 'Junior Developer',
@@ -117,10 +117,10 @@ export default function AboutSection() {
           className="grid grid-cols-2 md:grid-cols-4 gap-8"
         >
           {[
-            { label: 'Projects Completed', value: '50+', icon: Code },
-            { label: 'Years Experience', value: '5+', icon: Star },
-            { label: 'Happy Clients', value: '25+', icon: Rocket },
-            { label: 'Coffee Cups', value: '∞', icon: Zap }
+            { label: 'Projects Completed', value: '25+', icon: Code },
+            { label: 'Years Experience', value: '2+', icon: Rocket },
+            { label: 'Proficient Languages', value: '5+', icon: Star },
+            { label: 'Live Service Websites', value: '3+', icon: Zap }
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">

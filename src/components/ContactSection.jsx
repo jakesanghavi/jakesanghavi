@@ -37,7 +37,7 @@ export default function ContactSection() {
 
     try {
       await SendEmail({
-        to: 'john@example.com',
+        to: 'john.doe@example.com',
         subject: `Portfolio Contact: ${formData.name}`,
         body: `
           Name: ${formData.name}
@@ -65,9 +65,9 @@ export default function ContactSection() {
   };
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/johnsmith', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/johnsmith', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com/johnsmith', label: 'Twitter' }
+    { icon: Github, href: 'https://github.com/jakesanghavi', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://linkedin.com/in/jake-sanghavi', label: 'LinkedIn' },
+    { icon: Twitter, href: 'https://x.com/jakesanghavi', label: 'Twitter' }
   ];
 
   return (
@@ -190,9 +190,9 @@ export default function ContactSection() {
 
             <div className="space-y-6">
               {[
-                { icon: Mail, label: 'Email', value: 'john@example.com', href: 'mailto:john@example.com' },
-                { icon: Phone, label: 'Phone', value: '+1 (555) 123-4567', href: 'tel:+15551234567' },
-                { icon: MapPin, label: 'Location', value: 'San Francisco, CA' }
+                { icon: Mail, label: 'Email', value: 'john.doe@example.com', href: 'mailto:john.doe@example.com' },
+                { icon: Phone, label: 'Phone', value: '+1 (123) 456-7890', href: 'tel:+11234567890' },
+                { icon: MapPin, label: 'Location', value: 'Atlanta, GA' }
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -220,7 +220,7 @@ export default function ContactSection() {
             </div>
 
             <div className="pt-8">
-              <h4 className="text-lg font-semibold text-white mb-4">Follow Me</h4>
+              <h4 className="text-lg font-semibold text-white mb-4">Follow Me!</h4>
               <div className="flex gap-4">
                 {socialLinks.map((social, index) => (
                   <motion.a

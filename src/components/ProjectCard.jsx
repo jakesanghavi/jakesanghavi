@@ -4,6 +4,8 @@ import { Github, ExternalLink, Star } from 'lucide-react';
 import Button from './Button'
 
 export default function ProjectCard({ project, index }) {
+  const imageUrl = project.image_url || `https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=250&fit=crop&crop=entropy`;
+
   return (
     <motion.div
       layout
@@ -14,13 +16,23 @@ export default function ProjectCard({ project, index }) {
       whileHover={{ y: -10 }}
       className="group relative bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300"
     >
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden h-48">
+        {/* Blurred background image */}
         <img
-          src={project.image_url || `https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=250&fit=crop&crop=entropy`}
-          alt={project.title}
-          className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+          src={imageUrl}
+          alt={`Blurred background for ${project.title}`}
+          className="absolute inset-0 w-full h-full object-cover blur-lg scale-150"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+        {/* The main image, placed on top */}
+        <img
+          src={imageUrl}
+          alt={project.title}
+          className="relative z-10 w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
+        />
+
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"></div>
       </div>
 
       <div className="p-6">

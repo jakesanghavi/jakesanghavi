@@ -20,9 +20,10 @@ export default function HeroSection() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="mb-8"
                 >
-                    <div className="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-r from-blue-400 to-purple-600 p-1">
+                    <div className="w-48 h-48 mx-auto mb-8 rounded-full bg-gradient-to-r from-blue-400 to-purple-600 p-1">
                         <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center">
-                            <span className="text-4xl font-bold text-white">JS</span>
+                            {/* <span className="text-4xl font-bold text-white">JS</span> */}
+                            <img className="w-full h-full rounded-full object-cover" src="https://raw.githubusercontent.com/jakesanghavi/jakesanghavi.github.io/main/images/me.JPG"></img>
                         </div>
                     </div>
                 </motion.div>
@@ -74,7 +75,7 @@ export default function HeroSection() {
                     className="flex justify-center gap-6 mb-16"
                 >
                     <a
-                        href="https://github.com/johnsmith"
+                        href="https://github.com/jakesanghavi"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-slate-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-110"
@@ -82,7 +83,7 @@ export default function HeroSection() {
                         <Github size={28} />
                     </a>
                     <a
-                        href="https://linkedin.com/in/johnsmith"
+                        href="https://linkedin.com/in/jake-sanghavi"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-slate-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-110"
@@ -90,7 +91,7 @@ export default function HeroSection() {
                         <Linkedin size={28} />
                     </a>
                     <a
-                        href="mailto:john@example.com"
+                        href="mailto:john.doe@example.com"
                         className="text-slate-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-110"
                     >
                         <Mail size={28} />
