@@ -88,7 +88,7 @@ export default function ContactSection() {
             Let's Connect
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Ready to launch your next project into orbit? Let's discuss how we can work together to create something amazing.
+            I'm always excited to discuss opportunities, collaborate on interesting projects, and meet new people.
           </p>
         </motion.div>
 
@@ -184,7 +184,7 @@ export default function ContactSection() {
             <div>
               <h3 className="text-2xl font-bold text-white mb-6">Get in Touch</h3>
               <p className="text-slate-300 text-lg leading-relaxed mb-8">
-                I'm always excited to discuss opportunities, collaborate on interesting projects, and meet new people.
+                {/* PH */}
               </p>
             </div>
 
