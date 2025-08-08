@@ -191,7 +191,7 @@ export default function ContactSection() {
             <div className="space-y-6">
               {[
                 { icon: Mail, label: 'Email', value: 'john.doe@example.com', href: 'mailto:john.doe@example.com' },
-                { icon: Phone, label: 'Phone', value: '+1 (123) 456-7890', href: 'tel:+11234567890' },
+                { icon: Phone, label: 'Phone', value: 'Please email ahead to request a phone interview.' },
                 { icon: MapPin, label: 'Location', value: 'Atlanta, GA' }
               ].map((item, index) => (
                 <motion.div

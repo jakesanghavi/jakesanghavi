@@ -78,3 +78,49 @@ export const skillsExport = [
   { name: 'Scikit-Learn', image_url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg' },
   { name: 'Pandas', image_url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg' },
 ];
+
+export const workExperienceExport = [
+  {
+    title: 'Data Analyst II',
+    company: 'AT&T',
+    period: '2024 —',
+    description: 'Primary developer of various ML and NLP models using Prophet and Transformer models. Informed company strategy around promotional programs and legal claim handling.',
+    logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8ZBNy5vLXYFyG0Nm8bwSAbXSyMKU74GxGnA&s'
+  },
+  {
+    title: 'Data Analyst Intern',
+    company: 'The Kraft Group',
+    period: '2024',
+    description: 'Predicted event attendance using PyTorch to structure staffing and inventory.',
+    logo: 'https://upload.wikimedia.org/wikipedia/en/2/25/Kraft_Group_Logo.svg'
+  },
+  {
+    title: 'Data Science Intern',
+    company: 'AT&T',
+    period: '2023',
+    description: 'Developed customer churn prediction models. Member of the team responsible for bringing Gen. AI to the company.',
+    logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8ZBNy5vLXYFyG0Nm8bwSAbXSyMKU74GxGnA&s'
+  },
+  {
+    title: 'Data Science Intern',
+    company: 'Thermo Fisher Scientific',
+    period: '2022',
+    description: 'Developed sales algorithms using combinatorics and anomaly detection for competitor analysis.',
+    logo: 'https://toppng.com/uploads/preview/thermo-fisher-scientific-logo-11530964369n55iig0pja.png'
+  }
+];
+
+export const educationExport = [
+  {
+    title: 'M.S. in Data Science',
+    company: 'Georgia Tech',
+    period: '2025-2026',
+    description: 'Furthering my understanding in advanced AI/ML fields.',
+  },
+  {
+    title: 'B.S. in Data Science',
+    company: 'Case Western Reserve University',
+    period: '2020 - 2024',
+    description: 'Graduated Summa Cum Laude with a 4.0 GPA and numerous awards.',
+  },
+];

@@ -1,51 +1,18 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Code, Rocket, Zap, Star, GraduationCap } from 'lucide-react';
+import { Code, Rocket, Zap, Star, GraduationCap, Building2 } from 'lucide-react';
 import SkillCard from './SkillCard';
-import { skillsExport } from '../assets/imports';
+import { skillsExport, workExperienceExport, educationExport } from '../assets/imports';
+import Timeline from './Timeline'; 
+
 
 export default function AboutSection() {
   const [skills] = useState(skillsExport);
+  const [workExperience] = useState(workExperienceExport)
 
-  const workExperience = [
-    {
-      title: 'Data Analyst II',
-      company: 'AT&T',
-      period: '2024 - Present',
-      description: 'Primary developer of various ML and NLP models using Prophet and Transformer models. Informed company strategy around promotional programs and legal claim handling.'
-    },
-    {
-      title: 'Data Analyst Intern',
-      company: 'The Kraft Group',
-      period: '2024',
-      description: 'Predicted event attendance using PyTorch to structure staffing and inventory.'
-    },
-    {
-      title: 'Data Science Intern',
-      company: 'Thermo Fisher Scientific',
-      period: '2022',
-      description: 'Developed sales algorithms using combinatorics and anomaly detection for competitor analysis.'
-    }
-  ];
-
-  const education = [
-    {
-      title: 'M.S. in Data Science',
-      company: 'Georgia Tech',
-      period: '2025-2026',
-      description: 'Furthering my understanding in advanced AI/ML fields.',
-    },
-    {
-      title: 'B.S. in Data Science',
-      company: 'Case Western Reserve University',
-      period: '2020 - 2024',
-      description: 'Graduated Summa Cum Laude with a 4.0 GPA and numerous awards.',
-    },
-  ];
+  const [education] = useState(educationExport);
 
   const [activeTab, setActiveTab] = useState('experience');
-
-  const activeData = activeTab === 'experience' ? workExperience : education;
 
   return (
     <section id="about" className="py-20 bg-slate-900 relative overflow-hidden">
@@ -77,7 +44,6 @@ export default function AboutSection() {
             className="bg-gradient-to-br from-slate-800 to-indigo-900 rounded-2xl p-8"
           >
             <h3 className="text-3xl font-bold text-white mb-8 flex items-center gap-3">
-              <Zap className="text-yellow-400" />
               Technical Skills
             </h3>
             <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
@@ -94,65 +60,59 @@ export default function AboutSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-
             {/* Toggle Buttons (Tabs) */}
             <div className="relative flex justify-center w-full max-w-sm mx-auto p-1 bg-slate-800 rounded-full border border-slate-700/50">
               {/* The Animated Gradient Background */}
               <div
                 className={`absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transition-transform duration-360 ease-in-out w-1/2 
-      ${activeTab === 'experience' ? 'translate-x-0' : 'translate-x-full'}
-    `}
+                  ${activeTab === 'experience' ? 'translate-x-0' : 'translate-x-full'}`}
               ></div>
-
               <button
                 onClick={() => setActiveTab('experience')}
                 className={`relative flex-1 flex items-center justify-center gap-2 px-6 py-2 rounded-full font-medium transition-colors duration-300 ease-in-out z-10
-      ${activeTab === 'experience'
-                    ? 'text-white'
-                    : 'text-slate-400 hover:text-white'
-                  }`}
+                  ${activeTab === 'experience' ? 'text-white' : 'text-slate-400 hover:text-white'}`}
               >
-                <Rocket />
+                <Building2 />
                 Experience
               </button>
-
               <button
                 onClick={() => setActiveTab('education')}
                 className={`relative flex-1 flex items-center justify-center gap-2 px-6 py-2 rounded-full font-medium transition-colors duration-300 ease-in-out z-10
-      ${activeTab === 'education'
-                    ? 'text-white'
-                    : 'text-slate-400 hover:text-white'
-                  }`}
+                  ${activeTab === 'education' ? 'text-white' : 'text-slate-400 hover:text-white'}`}
               >
                 <GraduationCap />
                 Education
               </button>
             </div>
-            <div className="mt-8 flex flex-col gap-y-8">
-              {/* To fix later: making delay 0 and layout prop make no animation problems
-              Probably a good move is keep them as they were (no layout, index*0.1 delay) 
-              when loading experience for the first time, but then using this verson if 
-              toggling over from eduation */}
-              {activeData.map((item, index) => (
-                <motion.div
-                  key={index}
-                  layout
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: Math.min(index * 0.0, 0) }}
-                  className="relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="w-2 h-2 rounded-full bg-blue-400 mt-3 flex-shrink-0"></div>
-                    <div>
-                      <h4 className="text-xl font-semibold text-white mb-1">{item.title}</h4>
-                      <p className="text-blue-400 font-medium mb-2">{item.company} • {item.period}</p>
-                      <p className="text-slate-300">{item.description}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+            
+            <div className="mt-8">
+              {activeTab === 'experience' ? (
+                <Timeline experiences={workExperience} />
+              ) : (
+                // Education uses different display structure
+                <div className="flex flex-col gap-y-8">
+                  {education.map((item, index) => (
+                    <motion.div
+                      key={index}
+                      layout
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6 }}
+                      className="relative bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300"
+                    >
+                      <div className="flex items-start gap-4">
+                        <div className="w-2 h-2 rounded-full bg-blue-400 mt-3 flex-shrink-0"></div>
+                        <div>
+                          <h4 className="text-xl font-semibold text-white mb-1">{item.title}</h4>
+                          <p className="text-blue-400 font-medium mb-2">{item.company} • {item.period}</p>
+                          <p className="text-slate-300">{item.description}</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              )}
             </div>
           </motion.div>
         </div>
