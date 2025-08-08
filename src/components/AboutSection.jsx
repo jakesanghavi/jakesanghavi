@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Code, Rocket, Zap, Star, GraduationCap, Building2 } from 'lucide-react';
+import { Code, Laptop, Zap, Star, GraduationCap, Building2 } from 'lucide-react';
 import SkillCard from './SkillCard';
 import { skillsExport, workExperienceExport, educationExport } from '../assets/imports';
-import Timeline from './Timeline'; 
+import Timeline from './Timeline';
 
 
 export default function AboutSection() {
@@ -84,7 +84,7 @@ export default function AboutSection() {
                 Education
               </button>
             </div>
-            
+
             <div className="mt-8">
               {activeTab === 'experience' ? (
                 <Timeline experiences={workExperience} />
@@ -104,7 +104,12 @@ export default function AboutSection() {
                       <div className="flex items-start gap-4">
                         <div className="w-2 h-2 rounded-full bg-blue-400 mt-3 flex-shrink-0"></div>
                         <div>
-                          <h4 className="text-xl font-semibold text-white mb-1">{item.title}</h4>
+                          <div className="flex items-center gap-2 mb-1">
+                            {item.logo && (
+                              <img src={item.logo} alt={`${item.company} logo`} className="h-6 w-auto rounded" />
+                            )}
+                            <h4 className="text-xl font-semibold text-white">{item.title}</h4>
+                          </div>
                           <p className="text-blue-400 font-medium mb-2">{item.company} • {item.period}</p>
                           <p className="text-slate-300">{item.description}</p>
                         </div>
@@ -122,12 +127,12 @@ export default function AboutSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.5, delay: 0.35 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-8"
         >
           {[
             { label: 'Projects Completed', value: '25+', icon: Code },
-            { label: 'Years Experience', value: '2+', icon: Rocket },
+            { label: 'Years Experience', value: '2+', icon: Laptop },
             { label: 'Proficient Languages', value: '5+', icon: Star },
             { label: 'Live Service Websites', value: '3+', icon: Zap }
           ].map((stat, index) => (

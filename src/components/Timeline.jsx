@@ -12,7 +12,6 @@ const Timeline = ({ experiences = [] }) => {
     const str = String(period);
     if (dashRegex.test(str)) {
       const parts = str.split(new RegExp(`\\s*${DASH_CHARS}\\s*`)).map(p => p.trim());
-      console.log(period.split(' '))
       if (parts.length === 2 && period.split(' ').length > 2) {
         return [parts[0], '-', parts[1]];
       }

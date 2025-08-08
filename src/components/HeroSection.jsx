@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
 import Button from './Button'
 import ParticleField from './ParticleField';
+import Navbar from './Navbar'; // Import the new Navbar component
 
 export default function HeroSection() {
     const scrollToSection = (sectionId) => {
@@ -10,10 +11,11 @@ export default function HeroSection() {
     };
 
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-slate-900 via-purple-900 to-slate-900">
+        <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-slate-900 via-purple-900 to-slate-900">
+            <Navbar />
             <ParticleField />
 
-            <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+            <div className="relative z-10 text-center px-6 max-w-4xl mx-auto pt-24">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}

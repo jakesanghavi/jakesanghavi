@@ -116,11 +116,13 @@ export const educationExport = [
     company: 'Georgia Tech',
     period: '2025-2026',
     description: 'Furthering my understanding in advanced AI/ML fields.',
+    logo: 'https://images.squarespace-cdn.com/content/v1/530175eae4b02368396cb720/d62a472b-38fd-45cd-a6f5-7ea93e17d46c/GT-athletics.png'
   },
   {
     title: 'B.S. in Data Science',
     company: 'Case Western Reserve University',
     period: '2020 - 2024',
     description: 'Graduated Summa Cum Laude with a 4.0 GPA and numerous awards.',
+    logo: 'https://case.edu/brand/sites/default/files/2023-05/CWRU_Acronym-logo-brand.jpg'
   },
 ];
