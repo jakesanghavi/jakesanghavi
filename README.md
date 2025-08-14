@@ -1,5 +1,5 @@
 # 💫 About Me:
-Hi, my name is Jake Sanghavi! I recently graduated from Case Western Reserve University, and my main interests are machine learning, software engineering, astrophysics, and business.<br><br>I'm currently doing Data Science work for AT&T.
+Hi, my name is Jake Sanghavi! I'm currently doing Data Science work for AT&T while doing my Master's at Georgia Tech. My main interests are sports analytics, astrophysics, investing, machine learning, and software engineering.
 
 # Website
 Find my personal website here: <a href="https://jakesanghavi.netlify.app/" target="_blank">https://jakesanghavi.netlify.app/</a>
